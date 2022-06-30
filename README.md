@@ -105,7 +105,7 @@ Select the expected sign of the nonlinear refractive index (n_2):
 ┃                   ◉◉          ┃
 ┃                 ◉    ◉        ┃
 ┃               ◉        ◉      ┃
-┃◉ ◉ ◉       ◉          ◉ ◉ ◉┃
+┃◉ ◉ ◉        ◉          ◉ ◉ ◉┃
 ┃       ◉    ◉                  ┃
 ┃         ◉◉                    ┃
 ┃                       ┉┉┉┉┉> Z ┃
@@ -118,7 +118,7 @@ Select the expected sign of the nonlinear refractive index (n_2):
 ┃           ◉◉                  ┃  
 ┃         ◉   ◉                 ┃
 ┃       ◉       ◉               ┃
-┃◉ ◉ ◉          ◉       ◉ ◉ ◉┃
+┃◉ ◉ ◉           ◉       ◉ ◉ ◉┃
 ┃                   ◉    ◉      ┃
 ┃                     ◉◉        ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
