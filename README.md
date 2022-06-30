@@ -5,6 +5,33 @@ This open-source software is made public along with the conference paper *"Nonli
 
 ## Requirements for measurements and input data preparation
 
+The software has strict requirements on the input data format, in order to run properly. So, unless it is modified by a third party to make it more flexible or adjusted to external specific needs, the following conditions must be met to ensure software stability and functionality.
+
+**For the measurements.**
+- A complete set of measurements consists on a series of pairs of open-aperture and closed-aperture Z-scans. Every pair of Z-scans within this series (power sweep) is made for a different incident power level (input optical power).
+- The power sweep should comprise at least two different incident power levels. Performing a more comprehensive power sweep (more Z-scans pairs) is suggested, to increase the acuracy of the results (by mitigating random experimetal error). Between 5 and 10 Z-scans pairs might provide enough information for the material nonlinear parameter extraction.
+- Both open-aperture and closed-aperture measurements must be performed for every incident power level in the sweep.
+- **All** Z-scans must share the same z-axis sampling: i.e., the same amount of samples and the same z-coordinates.
+- The same aperture should be used for all the closed-aperture measurements.
+
+*Naturally, previous conditions apply for the Z-scans subjected to the same analysis (parameter extraction process). Different data sets, for different analyses, might differ -for example- in aperture size or z-axis sampling.
+
+**For the input data file**
+- The input file with the information to be passed to the software, should be a comma-separated values files (with .csv extension). Although, it may be created with any program in capacity of saving in this format; e.g., Microsoft Excel.
+- The structure of the file is organized by columns, and every column has a header.
+- The headers for all columns are arbitrary. The user may employ them to label the data according to the followed experimental protocol.
+- The file contains only information about z-coordinates and optical power values. All columns associated to z-coordinates should have values in units of milimeters (mm); and all columns associated to optical power should contain values in watts (W). For example, if a power measurement of 800 microwatts is made for a sample located at 1 inch in the z-axis, the values corresponding to this measurement should be saved as 0.0008 and 25.4.
+- The sampling in the z-axis is arbitrary, and the reference value for distance along the z-axis is arbitrary. However, it is recommended that the z-coordinates selected for the measurements allow the detection of power transmission under linear conditions at the beginning and at the end of the scan (i.e., the z-coordinates of the Z-scans would be such that the first and last z-coordinates are far enough from the focus as to allow the transmission to return to the linear regime).
+- The first column of the file should (only) contain the values of all the incident power levels for which a pair of open- and closed-aperture Z-scans was performed. For example, if the whole experiment comprised a power sweep of 100 mW, 200 mW and 300 mW, the first column of the file should only contain the header and the values 0.1, 0.2, and 0.3.
+- The following columns always go in sets of three. Each set corresponds to a different incident power level; so, there should be as many sets as incident power levels were registered in the first column of the file. Each of these sets corresponds to a pair of open- and closed-aperture Z-scans. The first column of each set contains the information of the Z-coordinates of the Z-scans, the second column of the set contains the information of the output optical power detected during the open-aperture Z-scan, and the third column of each set contains the information of the output optical power detected during the closed-aperture Z-scan. To have a consistent file, all the z-coordinates columns (of all sets) should be identical (only varying in their header).
+- These sets of columns should be registered in ascending order of incident power level.
+
+
+*If the file is created from a worksheet document, make sure that the final CSV file does not include fully idle/empty columns or rows (e.g., several lines just with `,,,,,,`). This may prevent the proper file reading.
+
+**To avoid non-detected errors derived from indequeate file structure, the software performs a preliminary check of the file to ensure that the basic guidelines are met.
+
+
 ## Software initial settings
 
 ```
@@ -105,7 +132,7 @@ Select the expected sign of the nonlinear refractive index (n_2):
 ┃                   ◉◉          ┃
 ┃                 ◉    ◉        ┃
 ┃               ◉        ◉      ┃
-┃◉ ◉ ◉        ◉          ◉ ◉ ◉┃
+┃◉ ◉ ◉       ◉          ◉ ◉ ◉┃
 ┃       ◉    ◉                  ┃
 ┃         ◉◉                    ┃
 ┃                       ┉┉┉┉┉> Z ┃
@@ -118,7 +145,7 @@ Select the expected sign of the nonlinear refractive index (n_2):
 ┃           ◉◉                  ┃  
 ┃         ◉   ◉                 ┃
 ┃       ◉       ◉               ┃
-┃◉ ◉ ◉           ◉       ◉ ◉ ◉┃
+┃◉ ◉ ◉          ◉       ◉ ◉ ◉┃
 ┃                   ◉    ◉      ┃
 ┃                     ◉◉        ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
