@@ -33,7 +33,7 @@ The software has strict requirements on the input data format, in order to run p
 **To avoid non-detected errors derived from indequeate file structure, the software performs a preliminary check of the file to ensure that the basic guidelines are met.
 
 \
-To facilitate the understanding of the required structure for the input file, the following example table is included. It follows the aforementioned guidelines. The headers are arbitrary strings, all other values are numbers. P_in1<P_in2<P_in3. Columns labelled with headers "Z_input_power_1", "OA_input_power_1", and "CA_input_power_1" correspond to the incident power level P_in1; and so forth.
+To facilitate the understanding of the required structure for the input file, the following example table is included. It follows the aforementioned guidelines. The headers are arbitrary strings, all other values are numbers. `P_in1`<`P_in2`<`P_in3`. Columns labelled with headers "*Z_input_power_1*", "*OA_input_power_1*", and "*CA_input_power_1*" correspond to the incident power level `P_in1`; and so forth.
 
 | Power_levels | Z_input_power_1 | OA_input_power_1 | CA_input_power_1 | Z_input_power_2 | OA_input_power_2 | CA_input_power_2 | Z_input_power_3 | OA_input_power_3 | CA_input_power_3 |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
