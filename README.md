@@ -8,7 +8,7 @@ This open-source software is made public along with the conference paper *"Nonli
 The software has strict requirements on the input data format, in order to run properly. So, unless it is modified by a third party to make it more flexible or adjusted to external specific needs, the following conditions must be met to ensure software stability and functionality.
 
 \
-**For the measurements.**
+**For the measurements**
 - A complete set of measurements consists on a series of pairs of open-aperture and closed-aperture Z-scans. Every pair of Z-scans within this series (power sweep) is made for a different incident power level (input optical power).
 - The power sweep should comprise at least two different incident power levels. Performing a more comprehensive power sweep (more Z-scans pairs) is suggested, to increase the acuracy of the results (by mitigating random experimetal error). Between 5 and 10 Z-scans pairs might provide enough information for the material nonlinear parameter extraction.
 - Both open-aperture and closed-aperture measurements must be performed for every incident power level in the sweep.
@@ -49,7 +49,7 @@ To facilitate the understanding of the required structure for the input file, th
 | | z10 | OA1_output_P10 | CA1_output_P10 | z10 | OA2_output_P10 | CA2_output_P10 | z10 | OA3_output_P10 | CA3_output_P10|
 
 \
-The CSV file that corresponds to the previous table (or worksheet) would like like the following example:
+The CSV file associated to the previous table (or worksheet) should look like like the following example:
 
 ```
 Power_levels,Z_input_power_1,OA_input_power_1,CA_input_power_1,Z_input_power_2,OA_input_power_2,CA_input_power_2,Z_input_power_3,OA_input_power_3,CA_input_power_3
