@@ -1,7 +1,9 @@
 # Z-scan-PARAMETER-EXTRACTION-PROGRAM
 Data processing code for nonlinear materials parameter extraction.
 
-This open-source software is made public along with the conference paper *"Nonlinear photonics in undergraduate curriculum: hands-on training to meet the demands of a qualified workforce"*, associated with the work presented at the Optical Engineering + Applications Conference of the SPIE event Optics+Photonics 2022 under the same title. This paper contains the information regarding the theoretical framework, experimental procedures, and numerical strategies required for a successful Z-scan nonlinear characterization. This is the software that is used to extract the nonlinear and experimental setup parameters from the Z-scan measurements explained in the proceeding. Please refer to this document for in-depth explanation of the optics and data processing methodologies that support this software. In the following, the instructions to operate the software are presented, and some common errors are addressed.
+This python-based open-source software is made public along with the conference paper *"Nonlinear photonics in undergraduate curriculum: hands-on training to meet the demands of a qualified workforce"*, associated with the work presented at the Optical Engineering + Applications Conference of the SPIE event Optics+Photonics 2022 under the same title. This paper contains the information regarding the theoretical framework, experimental procedures, and numerical strategies required for a successful Z-scan nonlinear characterization. This is the software that is used to extract the nonlinear and experimental setup parameters from the Z-scan measurements explained in the proceeding. Please refer to this document for in-depth explanation of the optics and data processing methodologies that support this software. In the following, the instructions to operate the software are presented, and some common errors are addressed.
+
+The software may be downloaded from this repository, in the file `Z_Scan_Data_Processing.py`, and is also available for online execution at **LINK**
 
 ## Requirements for measurements and input data preparation
 
