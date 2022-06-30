@@ -13,7 +13,7 @@ June 2022.
 #╒════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╕
 #│          
 
-data_filename = "Z_Scan_Data.csv" #W vs mm [Transmitted power for open aperture and closed apperture scans]
+data_filename = "Z_Scan_Data.csv" #W vs mm [Transmitted power for open-aperture and closed-aperture scans]
                                              # *Check templates or instructions for data file format.
 
 install_libs = True #boolean [Enables the installation of the external libraries required by the software]
