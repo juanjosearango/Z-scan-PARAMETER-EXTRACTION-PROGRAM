@@ -3,7 +3,7 @@ Data processing code for nonlinear materials parameter extraction.
 
 This python-based open-source software is made public along with the conference paper *"Nonlinear photonics in undergraduate curriculum: hands-on training to meet the demands of a qualified workforce"*, associated with the work presented at the Optical Engineering + Applications Conference of the SPIE event Optics+Photonics 2022 under the same title. This paper contains the information regarding the theoretical framework, experimental procedures, and numerical strategies required for a successful Z-scan nonlinear characterization. This is the software that is used to extract the nonlinear and experimental setup parameters from the Z-scan measurements explained in the proceeding. Please refer to this document for in-depth explanation of the optics and data processing methodologies that support this software. In the following, the instructions to operate the software are presented, and some common errors are addressed.
 
-The software may be downloaded from this repository, in the file `Z_Scan_Data_Processing.py`, and is also available for online execution at **LINK**
+The software may be downloaded from this repository, in the file `Z_Scan_Data_Processing.py`, and is also available for online execution at [*Google Colab*](https://colab.research.google.com/drive/19VCOF2bhVFJW9PjAbUNMA_QtJN85g9i0?usp=sharing).
 
 ## Requirements for measurements and input data preparation
 
@@ -73,11 +73,9 @@ Additionally, an example file is included in the repository (i.e., `Z_Scan_Data.
 
 ## Software initial settings
 
-After carrying out the measurements and having them organized in a file according to the previous guidelines, download the python script ´Z_Scan_Data_Processing.py´ and save it in the same directory as the CSV input data file.
+After carrying out the measurements and having them organized in a file according to the previous guidelines, open the python script ´Z_Scan_Data_Processing.py´. It must be stored in the same directory as the CSV input data file. As python interpreter, *Spyder* from [*Anaconda*](https://www.anaconda.com/) is recommended for offline execution, and the *Google Colab* [notebook](https://colab.research.google.com/drive/19VCOF2bhVFJW9PjAbUNMA_QtJN85g9i0?usp=sharing) is recommended for online execution. The interpreter must support the python libraries `datetime`, `numpy`, `pandas`, `matplotlib`, `matplotlib.pyplot`, `bokeh`, `scipy`, `lmfit` and `sklearn`. But there is no problem if they are not installed, the software can perform a library installation/check.
 
-Execute the script in a python interpreter (*Spyder* from [*Anaconda*](https://www.anaconda.com/) is recommended). The interpreter must support the python libraries `datetime`, `numpy`, `pandas`, `matplotlib`, `matplotlib.pyplot`, `bokeh`, `scipy`, `lmfit` and `sklearn`. But there is no problem if they are not installed, the software can perform a library installation/check.
-
-
+Before running the program, users must manually configure the settings at the beginning of the source code, according to their setup specifications and analysis preferences. The user-configured section explicitly is indicated; delimited by a box, as shown below:
 
 ```
 # 📝 Modify user settings within the box 📝
@@ -86,36 +84,11 @@ Execute the script in a python interpreter (*Spyder* from [*Anaconda*](https://w
 
 data_filename = "Z_Scan_Data2.csv" #W vs mm [Transmitted power for open aperture and closed apperture scans]
                                              # *Check templates or instructions for data file format.
-
-install_libs = False #boolean [Enables the installation of the external libraries required by the software]
-                              # *Disable after first installation to avoid launch delay.
-
-data_res_survey = False #boolean [Enables external plotting of input data and obtained results, and functionality-related messages]
-                                 # All plots appear in browser, to allow simultaneous execution of the program.
-
-save_to_file = True #boolean [Enables automatic CSV file generation, with parameters estimations]
-                              # Results folder with the file is saved in the same directory as this python script.
-                                    
-k_ext = 3.70187e-16 #adim [Extinction coefficient] (( k_ext( Si ) @1.56 um: 3.70187e-16 ))
-
-L_sample = 350e-6 #m [Sample width]
-
-tau = 90e-15 #s [Laser pulse duration] *For CW lasers set any tau and f_ref such that tau = 1/f_rep.
-
-f_rep = 100e6 #Hz [Laser repetition rate] *For CW lasers set any tau and f_ref such that tau = 1/f_rep.
-
-lda_0 = 1.56e-6 #m [(Central) Wavelength in vacuum]
-
-L_setup = 152.4e-3 #m [Setup length] *Measured from lens to aperture along optical axis.
-
-f_lens = 50e-3 #m [Lens focal length @lda_0]
-
-n_prop_media = 1.0 #adim [Linear refractive index of external medium]
-
-a = 1.42e-3 #m [Aperture radius] *Software can also estimate this from data, if it was generated preserving the same aperture.
-
-n_2_search = [3e-19, 2e-17] #m^2/W [Range to initialize n_2 estimation method] *It can be also provided manually during execution.
-
+                                             
+                                                       ·
+                                                       ·
+                                                       ·
+                                                       
 N_obj = 1007  # [Resolution of beam cross-section for discrete Fourier transform propagation]
                 # *Slightly adjust this number, if matrix shape incompatibility errors arise.
 
