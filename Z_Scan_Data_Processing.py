@@ -16,7 +16,7 @@ June 2022.
 data_filename = "Z_Scan_Data.csv" #W vs mm [Transmitted power for open aperture and closed apperture scans]
                                              # *Check templates or instructions for data file format.
 
-install_libs = False #boolean [Enables the installation of the external libraries required by the software]
+install_libs = True #boolean [Enables the installation of the external libraries required by the software]
                               # *Disable after first installation to avoid launch delay.
 
 data_res_survey = False #boolean [Enables external plotting of input data and obtained results, and functionality-related messages]
