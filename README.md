@@ -200,7 +200,7 @@ Software uses linear ranges entered to determine a reference asymptote line for 
 
 The normalized closed-aperture curves are computed, and showed as *bokeh* plots.
 
-<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CAn%20data.png" width="400" height="300">
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CAn%20data.png" width="500" height="300">
 
 Users must check the trend of the closed-aperture curves, in order to verify that the measurements have the expected form, and to determine the expected sign of the nonlinear index n_2. User must select between "positive" and "negative" by entering `0` or `1`, respectively.
 
@@ -319,6 +319,7 @@ The results report consists on the estimations for the aperture radius r_a (if r
 
 If the `data_res_survey` variable is set `True` in the source code intial settings, the program will execute the same instructions as for the Ordiary Mode operation, but it also print additional notifications through the console and shows complementary plots and graphics. This information may be useful to survey the input data, and troubleshoot potential software issues. This mode is aimed to provide a 'transparent' operation alternative for the software execution, to extend user insights about the input data or to help solving errors/unexpected results.
 
+\
 In this mode, the software prints in the console the following additional messages:
 
 - A report after performing the input data file check:
@@ -343,6 +344,7 @@ In this mode, the software prints in the console the following additional messag
 📢 Max. peak power value used for program execution:13630.407697502911 W
 ```
 
+\
 In this mode, the software shows the following additional *bokeh* plots and graphics:
 
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data%20with%20ref%20lines.png" width="400" height="250"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data%20with%20ref%20lines.png" width="400" height="250">
