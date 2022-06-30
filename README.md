@@ -353,6 +353,6 @@ In this mode, the software shows the following additional *bokeh* plots and grap
 
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/CAn%20data%20processing.png" width="500" height="313">
 
-<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample1.png" width="250" height="200"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample2.png" width="250" height="200"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample3.png" width="250" height="200">
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample1.png" width="250" height="225"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample2.png" width="250" height="225"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample3.png" width="250" height="225">
 
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/n_2%20power%20sweep%20CA%20z-scan%20simulation.png" width="700" height="400">
