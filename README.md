@@ -300,6 +300,7 @@ Enter upper limit for n_2 search interval (must be greater than previous one):
 >>: 1e-17
 ```
 
+Finally, the program executes the numerical fitting and optimization routines, and the results of the execution are presented in the console. If the `save_to_file` configuration was set `True`, the results are also saved in a CSV file stored in a folder, that is saved in the directory where the python script is stored. 
 
 ```
 ╓─── ▾▾▾
@@ -312,5 +313,7 @@ Enter upper limit for n_2 search interval (must be greater than previous one):
 ╙─── ▴▴▴
 ```
 
+The results report consists on the estimations for the aperture radius r_a (if required by the user), beam's radius at focus w_0, nonlinear refractive index n_2, two-photon absorption coefficient beta_TPA, and the figure of merit of the nonlinear process FOM_TPA.
+*FOM_TPA is defined as n_2/(lda_0·beta_TPA)*
 
 ## Software execution in Examination and Diagnostics Mode: Data and results survey
