@@ -7,6 +7,7 @@ This open-source software is made public along with the conference paper *"Nonli
 
 The software has strict requirements on the input data format, in order to run properly. So, unless it is modified by a third party to make it more flexible or adjusted to external specific needs, the following conditions must be met to ensure software stability and functionality.
 
+\
 **For the measurements.**
 - A complete set of measurements consists on a series of pairs of open-aperture and closed-aperture Z-scans. Every pair of Z-scans within this series (power sweep) is made for a different incident power level (input optical power).
 - The power sweep should comprise at least two different incident power levels. Performing a more comprehensive power sweep (more Z-scans pairs) is suggested, to increase the acuracy of the results (by mitigating random experimetal error). Between 5 and 10 Z-scans pairs might provide enough information for the material nonlinear parameter extraction.
@@ -16,6 +17,7 @@ The software has strict requirements on the input data format, in order to run p
 
 *Naturally, previous conditions apply for the Z-scans subjected to the same analysis (parameter extraction process). Different data sets, for different analyses, might differ -for example- in aperture size or z-axis sampling.
 
+\
 **For the input data file**
 - The input file with the information to be passed to the software, should be a comma-separated values files (with .csv extension). Although, it may be created with any program in capacity of saving in this format; e.g., Microsoft Excel.
 - The structure of the file is organized by columns, and every column has a header.
@@ -26,10 +28,45 @@ The software has strict requirements on the input data format, in order to run p
 - The following columns always go in sets of three. Each set corresponds to a different incident power level; so, there should be as many sets as incident power levels were registered in the first column of the file. Each of these sets corresponds to a pair of open- and closed-aperture Z-scans. The first column of each set contains the information of the Z-coordinates of the Z-scans, the second column of the set contains the information of the output optical power detected during the open-aperture Z-scan, and the third column of each set contains the information of the output optical power detected during the closed-aperture Z-scan. To have a consistent file, all the z-coordinates columns (of all sets) should be identical (only varying in their header).
 - These sets of columns should be registered in ascending order of incident power level.
 
-
 *If the file is created from a worksheet document, make sure that the final CSV file does not include fully idle/empty columns or rows (e.g., several lines just with `,,,,,,`). This may prevent the proper file reading.
 
 **To avoid non-detected errors derived from indequeate file structure, the software performs a preliminary check of the file to ensure that the basic guidelines are met.
+
+\
+To facilitate the understanding of the required structure for the input file, the following example table is included. It follows the aforementioned guidelines. The headers are arbitrary strings, all other values are numbers. P_in1<P_in2<P_in3. Columns labelled with headers "Z_input_power_1", "OA_input_power_1", and "CA_input_power_1" correspond to the incident power level P_in1; and so forth.
+
+| Power_levels | Z_input_power_1 | OA_input_power_1 | CA_input_power_1 | Z_input_power_2 | OA_input_power_2 | CA_input_power_2 | Z_input_power_3 | OA_input_power_3 | CA_input_power_3 |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+|P_in1 | z1 | OA1_output_P1 | CA1_output_P1 | z1 | OA2_output_P1 | CA2_output_P1 | z1 | OA3_output_P1 | CA3_output_P1|
+|P_in2 | z2 | OA1_output_P2 | CA1_output_P2 | z2 | OA2_output_P2 | CA2_output_P2 | z2 | OA3_output_P2 | CA3_output_P2|
+|P_in3 | z3 | OA1_output_P3 | CA1_output_P3 | z3 | OA2_output_P3 | CA2_output_P3 | z3 | OA3_output_P3 | CA3_output_P3|
+| | z4 | OA1_output_P4 | CA1_output_P4 | z4 | OA2_output_P4 | CA2_output_P4 | z4 | OA3_output_P4 | CA3_output_P4|
+| | z5 | OA1_output_P5 | CA1_output_P5 | z5 | OA2_output_P5 | CA2_output_P5 | z5 | OA3_output_P5 | CA3_output_P5|
+| | z6 | OA1_output_P6 | CA1_output_P6 | z6 | OA2_output_P6 | CA2_output_P6 | z6 | OA3_output_P6 | CA3_output_P6|
+| | z7 | OA1_output_P7 | CA1_output_P7 | z7 | OA2_output_P7 | CA2_output_P7 | z7 | OA3_output_P7 | CA3_output_P7|
+| | z8 | OA1_output_P8 | CA1_output_P8 | z8 | OA2_output_P8 | CA2_output_P8 | z8 | OA3_output_P8 | CA3_output_P8|
+| | z9 | OA1_output_P9 | CA1_output_P9 | z9 | OA2_output_P9 | CA2_output_P9 | z9 | OA3_output_P9 | CA3_output_P9|
+| | z10 | OA1_output_P10 | CA1_output_P10 | z10 | OA2_output_P10 | CA2_output_P10 | z10 | OA3_output_P10 | CA3_output_P10|
+
+\
+The CSV file that corresponds to the previous table (or worksheet) would like like the following example:
+
+```
+Power_levels,Z_input_power_1,OA_input_power_1,CA_input_power_1,Z_input_power_2,OA_input_power_2,CA_input_power_2,Z_input_power_3,OA_input_power_3,CA_input_power_3
+P_in1,z1,OA1_output_P1,CA1_output_P1,z1,OA2_output_P1,CA2_output_P1,z1,OA3_output_P1,CA3_output_P1
+P_in2,z2,OA1_output_P2,CA1_output_P2,z2,OA2_output_P2,CA2_output_P2,z2,OA3_output_P2,CA3_output_P2
+P_in3,z3,OA1_output_P3,CA1_output_P3,z3,OA2_output_P3,CA2_output_P3,z3,OA3_output_P3,CA3_output_P3
+,z4,OA1_output_P4,CA1_output_P4,z4,OA2_output_P4,CA2_output_P4,z4,OA3_output_P4,CA3_output_P4
+,z5,OA1_output_P5,CA1_output_P5,z5,OA2_output_P5,CA2_output_P5,z5,OA3_output_P5,CA3_output_P5
+,z6,OA1_output_P6,CA1_output_P6,z6,OA2_output_P6,CA2_output_P6,z6,OA3_output_P6,CA3_output_P6
+,z7,OA1_output_P7,CA1_output_P7,z7,OA2_output_P7,CA2_output_P7,z7,OA3_output_P7,CA3_output_P7
+,z8,OA1_output_P8,CA1_output_P8,z8,OA2_output_P8,CA2_output_P8,z8,OA3_output_P8,CA3_output_P8
+,z9,OA1_output_P9,CA1_output_P9,z9,OA2_output_P9,CA2_output_P9,z9,OA3_output_P9,CA3_output_P9
+,z10,OA1_output_P10,CA1_output_P10,z10,OA2_output_P10,CA2_output_P10,z10,OA3_output_P10,CA3_output_P10
+```
+
+\
+Additionally, an example file is included in the repository (i.e., `Z_Scan_Data.csv`), which contains the data of real measurements carried out for the nonlinear characterization of a silicon sample. This file may be used as template.
 
 
 ## Software initial settings
@@ -77,6 +114,7 @@ N_obj = 1007  # [Resolution of beam cross-section for discrete Fourier transform
 #│                                                                                                                                │
 #╘════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╛
 ```
+
 
 ## Software execution and console-based settings
 
@@ -178,6 +216,7 @@ Enter upper limit for n_2 search interval (must be greater than previous one):
 >>: 1e-17
 ```
 
+
 ## Results
 
 ```
@@ -190,5 +229,6 @@ Enter upper limit for n_2 search interval (must be greater than previous one):
 ║ FOM_TPA: 0.13167742952474348
 ╙─── ▴▴▴
 ```
+
 
 ## Examination and diagnostics mode: Data and results survey
