@@ -305,15 +305,54 @@ Finally, the program executes the numerical fitting and optimization routines, a
 ```
 ╓─── ▾▾▾
 ║ Parameters extracted:
-║ r_a: 0.0014403292181069957 m
-║ w_0: 1.796569577250944e-05 m
-║ n_2: 4.6305771694311395e-18 m^2/W
-║ beta_TPA: 2.2542349961316023e-11 m/W
-║ FOM_TPA: 0.13167742952474348
+║ r_a: 0.0013786008230452674 m
+║ w_0: 1.9298252947742058e-05 m
+║ n_2: 5.593013060924584e-18 m^2/W
+║ beta_TPA: 2.4652329525255596e-11 m/W
+║ FOM_TPA: 0.1454331031463361
 ╙─── ▴▴▴
 ```
 
-The results report consists on the estimations for the aperture radius r_a (if required by the user), beam's radius at focus w_0, nonlinear refractive index n_2, two-photon absorption coefficient beta_TPA, and the figure of merit of the nonlinear process FOM_TPA.
-*FOM_TPA is defined as n_2/(lda_0·beta_TPA)*
+The results report consists on the estimations for the aperture radius r_a (if required by the user), beam's radius at focus w_0, nonlinear refractive index n_2, two-photon absorption coefficient beta_TPA, and the figure of merit of the nonlinear process FOM_TPA. Being FOM_TPA defined as n_2/(lda_0·beta_TPA).
 
 ## Software execution in Examination and Diagnostics Mode: Data and results survey
+
+If the `data_res_survey` variable is set `True` in the source code intial settings, the program will execute the same instructions as for the Ordiary Mode operation, but it also print additional notifications through the console and shows complementary plots and graphics. This information may be useful to survey the input data, and troubleshoot potential software issues. This mode is aimed to provide a 'transparent' operation alternative for the software execution, to extend user insights about the input data or to help solving errors/unexpected results.
+
+In this mode, the software prints in the console the following additional messages:
+
+- A report after performing the input data file check:
+
+```
+📢 Amount of power values detected in power sweep: 12.
+
+📢 Amount of reported power values is consistent with data provided.
+```
+
+- A report of the maximum effective incident power level used in the execution of the program (calculated from the input data):
+
+```
+📢 Take into account that input power levels reported in the first column
+    of user-provided data are not used for calculations, just for the
+    identification of the number of power levels that the power sweep comprises.
+    The incident power values that are used in calculations are inferred from
+    output data (in linear regime of the scan), and estimations of linear losses (given by alpha).
+
+📢 Max. average power value used for program execution:0.12267366927752621 W
+
+📢 Max. peak power value used for program execution:13630.407697502911 W
+```
+
+In this mode, the software shows the following additional *bokeh* plots and graphics:
+
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data%20with%20ref%20lines.png" width="400" height="200"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data%20with%20ref%20lines.png" width="400" height="200">
+
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/B_TPA%20first%20fitting.png" width="400" height="300"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/B_TPA%20second%20fitting.png" width="400" height="300">
+
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20at%20aperture%20plane%20OA.png" width="300" height="250"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20at%20aperture%20plane%20CA.png" width="300" height="250">
+
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/CAn%20data%20processing.png" width="400" height="300">
+
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample1.png" width="250" height="150"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample2.png" width="250" height="150"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample3.png" width="250" height="150">
+
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/n_2%20power%20sweep%20CA%20z-scan%20simulation.png" width="600" height="300">
