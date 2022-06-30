@@ -348,25 +348,25 @@ In this mode, the software prints in the console the following additional messag
 In this mode, the software shows the following additional *bokeh* plots and graphics:
 
 - Unprocessed input data curves, with the corresponding reference asymptote lines, used for the calculation of effective incident power levels and curves preparation.
-- 
+
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data%20with%20ref%20lines.png" width="400" height="250"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data%20with%20ref%20lines.png" width="400" height="250">
 
 - Representative plots illustrating the fitting process made with the open-aperture curves, for w_0 and beta_TPA estimation. Plotted figures vary according to the fitting method selected.
-- 
+
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/B_TPA%20first%20fitting.png" width="400" height="250"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/B_TPA%20second%20fitting.png" width="400" height="250">
 
 - Beam irradiance profile at aperture plane, with and without the aperture-induced power extinction effect. The aperture size is set according to the numerically optimized radius or the one provided by the user.
-- 
+
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20at%20aperture%20plane%20OA.png" width="300" height="270"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20at%20aperture%20plane%20CA.png" width="300" height="270">
 
 - Representative plot illustrating the calculation of the experimental slope of the peak-valley transmission difference vs incident peak power curve. The slope obtained is used as target for the n_2 search process.
-- 
+
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/CAn%20data%20processing.png" width="500" height="313">
 
 - After a value for n_2 estimation has been found, the beam irradiance profile is shown, evaluated at -1.7 z_0, 0, and 1.7 z_0. Where z_0 is the beam Rayleigh length.
-- 
+
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample1.png" width="250" height="225"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample2.png" width="250" height="225"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample3.png" width="250" height="225">
 
 - After a value for n_2 estimation has been found, an illustrative figure is prepared, showing the simulated closed-aperture normalized transmission, for different input power values. It is possible to observe asymmetries in this plot if there is a mismatch between the value of beta_TPA and the one found for n_2.
-- 
+
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/n_2%20power%20sweep%20CA%20z-scan%20simulation.png" width="700" height="400">
