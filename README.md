@@ -175,7 +175,7 @@ TypeError: Inadequate data format
 
 If the file structure check is successful, the program keeps its execution. The program will show the input data as *bokeh* plots (in browser or in notebook).
 
- <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data.png" width="400" height="200"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data.png" width="400" height="200">
+ <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data.png" width="400" height="250"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data.png" width="400" height="250">
 
 User must review measurement data, and determine which are the z-coordinates ranges for which the sample behavior may be considered linear; i.e., intervals of z-coordinates for which the output transmission level did not experience notorious alterations. User would typically identify two ranges, one at the beginning and other at the end of the Z-scans, as the beam focus is expected to be located near to the center of the z-coordinates selection. The program requires that the user enter the amount of identified linear ranges. If the transmission did not return to the linear regime for one of the Z-scan extreme regions, enter 1. Next, the program ask the user to enter the upper and lower limits of each range (in mm). Users can use *bokeh* plots to zoom in, to better determine the limits.
 
@@ -345,14 +345,14 @@ In this mode, the software prints in the console the following additional messag
 
 In this mode, the software shows the following additional *bokeh* plots and graphics:
 
-<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data%20with%20ref%20lines.png" width="400" height="200"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data%20with%20ref%20lines.png" width="400" height="200">
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data%20with%20ref%20lines.png" width="400" height="250"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data%20with%20ref%20lines.png" width="400" height="250">
 
-<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/B_TPA%20first%20fitting.png" width="400" height="300"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/B_TPA%20second%20fitting.png" width="400" height="300">
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/B_TPA%20first%20fitting.png" width="400" height="250"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/B_TPA%20second%20fitting.png" width="400" height="250">
 
-<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20at%20aperture%20plane%20OA.png" width="300" height="250"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20at%20aperture%20plane%20CA.png" width="300" height="250">
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20at%20aperture%20plane%20OA.png" width="300" height="270"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20at%20aperture%20plane%20CA.png" width="300" height="270">
 
-<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/CAn%20data%20processing.png" width="400" height="300">
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/CAn%20data%20processing.png" width="500" height="313">
 
-<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample1.png" width="250" height="150"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample2.png" width="250" height="150"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample3.png" width="250" height="150">
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample1.png" width="250" height="200"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample2.png" width="250" height="200"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample3.png" width="250" height="200">
 
-<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/n_2%20power%20sweep%20CA%20z-scan%20simulation.png" width="600" height="300">
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/n_2%20power%20sweep%20CA%20z-scan%20simulation.png" width="700" height="400">
