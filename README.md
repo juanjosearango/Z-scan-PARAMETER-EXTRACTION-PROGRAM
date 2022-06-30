@@ -28,7 +28,7 @@ The software has strict requirements on the input data format, in order to run p
 - The following columns always go in sets of three. Each set corresponds to a different incident power level; so, there should be as many sets as incident power levels were registered in the first column of the file. Each of these sets corresponds to a pair of open- and closed-aperture Z-scans. The first column of each set contains the information of the Z-coordinates of the Z-scans, the second column of the set contains the information of the output optical power detected during the open-aperture Z-scan, and the third column of each set contains the information of the output optical power detected during the closed-aperture Z-scan. To have a consistent file, all the z-coordinates columns (of all sets) should be identical (only varying in their header).
 - These sets of columns should be registered in ascending order of incident power level.
 
-*If the file is created from a worksheet document, make sure that the final CSV file does not include fully idle/empty columns or rows (e.g., several lines just with `,,,,,,`). This may prevent the proper file reading.
+*If the file is created from a worksheet document, make sure that the final CSV file does not include fully idle/empty columns or rows (e.g., several lines just with `,,,,,,`). This may prevent the proper reading of the file.
 
 **To avoid non-detected errors derived from indequeate file structure, the software performs a preliminary check of the file to ensure that the basic guidelines are met.
 
