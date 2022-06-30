@@ -73,6 +73,12 @@ Additionally, an example file is included in the repository (i.e., `Z_Scan_Data.
 
 ## Software initial settings
 
+After carrying out the measurements and having them organized in a file according to the previous guidelines, download the python script ´Z_Scan_Data_Processing.py´ and save it in the same directory as the CSV input data file.
+
+Execute the script in a python interpreter (*Spyder* from [*Anaconda*](https://www.anaconda.com/) is recommended). The interpreter must support the python libraries `datetime`, `numpy`, `pandas`, `matplotlib`, `matplotlib.pyplot`, `bokeh`, `scipy`, `lmfit` and `sklearn`. But there is no problem if they are not installed, the software can perform a library installation/check.
+
+
+
 ```
 # 📝 Modify user settings within the box 📝
 #╒════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╕
