@@ -176,11 +176,6 @@ TypeError: Inadequate data format
 If the file structure check is successful, the program keeps its execution. The program will show the input data as *bokeh* plots (in browser or in notebook).
 
  <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data.png" width="400" height="200"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data.png" width="400" height="200">
- 
-
-![alt text](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data.png | width=100px)
-
-![alt text](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data.png){ width=50% }
 
 User must review measurement data, and determine which are the z-coordinates ranges for which the sample behavior may be considered linear; i.e., intervals of z-coordinates for which the output transmission level did not experience notorious alterations. User would typically identify two ranges, one at the beginning and other at the end of the Z-scans, as the beam focus is expected to be located near to the center of the z-coordinates selection. The program requires that the user enter the amount of identified linear ranges. If the transmission did not return to the linear regime for one of the Z-scan extreme regions, enter 1. Next, the program ask the user to enter the upper and lower limits of each range (in mm). Users can use *bokeh* plots to zoom in, to better determine the limits.
 
@@ -201,7 +196,13 @@ Enter upper limit for range 2 (in mm):
 >>: 17
 ```
 
+Software uses linear ranges entered to determine a reference asymptote line for each Z-scan. This reference line is used to determine effective incident power levels, and if plots have linear deviations (e.g., introduced by alignment problems) they are 'straightened', taking the slope of these lines as reference of the curve 'tilt'. Next, data is prepared to start with the calculations.
 
+The normalized closed-aperture curves are computed, and showed as *bokeh* plots.
+
+<img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CAn%20data.png" width="400" height="300">
+
+Users must check the trend of the closed-aperture curves, in order to verify that the measurements have the expected form, and to determine the expected sign of the nonlinear index n_2. User must select between "positive" and "negative" by entering `0` or `1`, respectively.
 
 ```
 According to the plotted data and the following coordinate axis convention:
@@ -242,24 +243,54 @@ Select the expected sign of the nonlinear refractive index (n_2):
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 >>: 0
+```
 
+Next, users are allowed to select the fitting method to be used in the determination of w_0 and beta_TPA. Users can select the exact logarithmic fitting method, by entering `1`, or a Taylor expansion-based method, by entering `0`. *For more information on the methods, check the SPIE proceeding.
+
+```
 Select fitting method for beta_TPA estimation:
 (0) Use Taylor expansion approximation for logarithmic expression.
 (1) Perform optimization with exact logarithmic expression.
->>: 1
+>>: 0
+```
 
+If users select the "Taylor expansion approximation" option, they must select among the two Taylor expansion-based methods, by entering `0` or `1`. *For more information on the methods, check the SPIE proceeding.
+
+```
+Select fitting method:
+(0) [z->P] First normalized lorentzian fitting, then average across power levels.
+(1) [P->z] First linear slopes, then global lorentzian fitting.
+>>: 1
+```
+
+Next, users are allowed to select the method for determining circular aperture radius. If this value is known beforehand, users can prefer to use the value initially entered in the [source code intial settings](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/edit/main/README.md#software-initial-settings), by entering `0`. If the value is not known, or users prefer a numerical verification, a optimization-based estimation routine to determine the radius of the aperture can be executed; in this case, enter `1`. *For more information on the aperture estimation method, check the SPIE proceeding.
+
+```
 Select method for aperture setting:
 (0) Use value in source code, provided manually.
 (1) Execute estimation from data.
 >>: 1
+```
+
+If the "estimation from data" option is selected, the program will ask users to provide a maximum threshold (in m) for the search of the radius value estimation. This information helps the optimization routine to converge faster.
+
+```
 Provide a maximun value for the estimation (in m):
 >>: 0.005
+```
 
+Finally, users are required to determine the search interval for the n_2 value estimation; which is also made with an optimization routine. Users can prefer to use the values initially entered in the [source code intial settings](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/edit/main/README.md#software-initial-settings), by entering `0`. If users prefer to override these values, and enter new ones the must enter `1`.
+
+```
 Select the method for n_2 search initialization:
 (0) Use search interval limits in source code, provided manually.
 (1) Enter search interval limits via console.
 >>: 1
+```
 
+If the "interval limits via console" option is selected, users must enter the lower and the upper limits for the n_2 search interval. The sign of the two limits must be the same, and it was user-determined previosly during the program execution. Instructions for this step are printed in the console, if these instructions are not followed, the n_2 estimation routine may converge in a wrong value, or may not even converge.
+
+```
 **Search interval limits must be positive.
  It is possible to use scientific notation;
  e.g., enter 1.5e-20, which stands for 1.5 × 10^(-20)
@@ -268,6 +299,7 @@ Enter lower limit for n_2 search interval (must be less than next one):
 Enter upper limit for n_2 search interval (must be greater than previous one):
 >>: 1e-17
 ```
+
 
 ```
 ╓─── ▾▾▾
