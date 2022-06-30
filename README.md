@@ -68,14 +68,14 @@ P_in3,z3,OA1_output_P3,CA1_output_P3,z3,OA2_output_P3,CA2_output_P3,z3,OA3_outpu
 ```
 
 \
-Additionally, an example file is included in the repository (i.e., `Z_Scan_Data.csv`), which contains the data of real measurements carried out for the nonlinear characterization of a silicon sample. This file may be used as template.
+Additionally, an [example input data file](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Z_Scan_Data.csv) is included in the repository (i.e., `Z_Scan_Data.csv`), which contains the data of real measurements carried out for the nonlinear characterization of a silicon sample. This file may be used as template.
 
 
 ## Software initial settings
 
-After carrying out the measurements and having them organized in a file according to the previous guidelines, open the python script ´Z_Scan_Data_Processing.py´. It must be stored in the same directory as the CSV input data file. As python interpreter, *Spyder* from [*Anaconda*](https://www.anaconda.com/) is recommended for offline execution, and the *Google Colab* [notebook](https://colab.research.google.com/drive/19VCOF2bhVFJW9PjAbUNMA_QtJN85g9i0?usp=sharing) is recommended for online execution. The interpreter must support the python libraries `datetime`, `numpy`, `pandas`, `matplotlib`, `matplotlib.pyplot`, `bokeh`, `scipy`, `lmfit` and `sklearn`. But there is no problem if they are not installed, the software can perform a library installation/check.
+After carrying out the measurements and having them organized in a file according to the previous guidelines, open the python script ´Z_Scan_Data_Processing.py´. It must be stored in the same directory as the CSV input data file. As python interpreter, *Spyder* from [*Anaconda*](https://www.anaconda.com/) is recommended for offline execution, and the [*Google Colab* notebook](https://colab.research.google.com/drive/19VCOF2bhVFJW9PjAbUNMA_QtJN85g9i0?usp=sharing) is recommended for online execution. The interpreter must support the python libraries `datetime`, `numpy`, `pandas`, `matplotlib`, `matplotlib.pyplot`, `bokeh`, `scipy`, `lmfit` and `sklearn`. But there is no problem if they are not installed, the software can perform a library installation/check.
 
-Before running the program, users must manually configure the settings at the beginning of the source code, according to their setup specifications and analysis preferences. The user-configured section explicitly is indicated; delimited by a box, as shown below:
+Before running the program, users must manually configure the settings at the beginning of the source code, according to their setup specifications and analysis preferences. The user-configured section is explicitly indicated; delimited by a box, as shown below:
 
 ```
 # 📝 Modify user settings within the box 📝
@@ -96,11 +96,33 @@ N_obj = 1007  # [Resolution of beam cross-section for discrete Fourier transform
 #╘════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╛
 ```
 
+The name of the variables within user settings sections must not be modified, only their values, and preserving the type of variable. Variables are presented in the original code with default values. The settings that must be adjusted for each execution are the following:
 
-## Software execution and console-based settings
+- `data_filename`: It is a string variable, ending in `.csv`, indicating the name of the input data file. Distance and optical power stored values must be in units of milimeters (mm) and watts (W).
+- `install_libs`: It is a boolean variable (i.e., admits `True` or `False` values only). If true, the software performs an external library installation/check. It is recommended to be set `True` for the first execution in an environment. Disable afterwards to avoid launch delay.
+- `data_res_survey`: It is a boolean variable (i.e., admits `True` or `False` values only). If true, enables the examination and diagnostics mode of the software (detailed in a dedicated section). The software executes all the instructions of the ordinary mode, but also prints console notifications and shows graphics/plots that may be used to survey the data and results. It may be used to check if the program is running properly, and if input data show the expected trends and is read correctly by the software. If false, the ordinary mode is executed, only printing and showing the messages and plots required for the normal use of the software.
+- `save_to_file`: It is a boolean variable (i.e., admits `True` or `False` values only). If true, creates a results folder in which the parameters extracted are externally saved. If false, results are only showed in console.
+- `k_ext`: It is a float variable. User must provide the extinction coefficient *k* of the material of the sample. This is the imaginary part of the linear  complex refractive index of the material. It is adimensional.
+- `L_sample`: It is a float variable. User must provide the thickness (in m) of the sample exposed to the Z-scans. 
+- `tau`: It is a float variable. User must provide the duration (in s) of the light source pulses. If the source is not pulsed, but continuous-wave, an arbitrary pulse duration must be set, equating the repetition period (i.e., tau=1/f_rep).
+- `f_rep`: It is a float variable. User must provide the repetition rate (in Hz) of the pulsed light source. If the source is not pulsed, but continuous-wave, an arbitrary repetition rate must be set, such that the repetition period equates the pulse duration (i.e., tau=1/f_rep).
+- `lda_0`: It is a float variable. User must provide the central vacuum wavelength (in m) of the light pulses if source is pulsed, or the predominant wavelength (in m) of the light spectral content if the source is continuous-wave.
+- `L_setup`: It is a float variable. User must provide the length (in m) of the optical setup, measured from lens to aperture along optical axis.
+- `f_lens`: It is a float variable. User must provide the focal length (in m) of the lens used to focus the beam, evaluated for the wavelength given by lda_0.
+- `n_prop_media`: It is a float variable. User must provide the linear (real part of the) refractive index of the external medium. It is adimensional.
+- `a`: It is a float variable. User can provide the radius (in m) of the circular aperture used in the closed-aperture Z-scans. If this value is not known, software can also estimate it from data. The same aperture must be used for all closed-aperture measurements.
+- `n_2_search`: It is a list of two float variables. They are the lower and upper limits passed by user to the software to perform the search of the n_2 value. It is used to reduce the time it takes to the optimization process to converge, but the software is capable of finding the value outside of the given interval if the best estimation is not within the passed range. If the n_2 is expected to be positive, **both** values must be positive, and viceversa. If the sign of the n_2 is not known *a priori*, it is possible to override this values during software execution, after viewing the normalized closed-aperture transmission trend. These values must be entered with the units m^2/W.
+- `N_obj`:It is an integer variable. It is a parameter that determines the amount of samples considered for the square cross-section evaluation of the laser beam transverse profile, used for numerical propagations. The total amount of 'pixels' of each cross-section of the beam would be N_obj^2; thereby, this parameter determines the resolution of the of beam cross-section usded in discrete Fourier transform propagation. It is adimensional.
+
+**Important.** Values for all float variables must be entered in SI units, without prefixes (i.e., meters, seconds, hertz, W, etc).
+
+## Software execution in Ordinary Mode and console-based settings
+
+After completing the manual adjustment of the initial settings, run the program. If `install_libs` was set as `True`, the library installation/check will be performed first; this may take several seconds.
+
+If the library import is successful, the software will show the start message:
 
 ```
-
 ═══════════════════════════════════════╯ |╱
                                          ⚪⚟
 ═══════════════════════════════════════╮ |╲
@@ -115,8 +137,54 @@ N_obj = 1007  # [Resolution of beam cross-section for discrete Fourier transform
                     Juan José Arango. 2022 ┃
           Universidad Nacional de Colombia ┃
               Bridgewater State University ┃
+```
 
+Next, before starting with the calculations, the software will perform the input daya file check. If the file structure does not follow the [aforementioned guidelines](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/edit/main/README.md#requirements-for-measurements-and-input-data-preparation), program execution will stop and an error message is printed, along with information of the read data. If this occurs please check input data file format and structure; check the [example input data file](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Z_Scan_Data.csv) included in this repository.
 
+```
+⚠️ Amount of reported power values is NOT consistent with data provided.
+⚠️ Please verify that the format of the CSV file meets the requirements.
+⚠️ Please make sure that your CSV file does not contain idle columns (fully blank).
+⚠️ Your data:
+     Power_values(W)  Z_0.075W  OA_0.075W  ...  Z_0.250W  OA_0.250W  CA_0.250W
+0              0.075       0.0   0.037787  ...       0.0    0.12265   0.050551
+1              0.100       0.1   0.037787  ...       0.1    0.12266   0.050575
+2              0.125       0.2   0.037787  ...       0.2    0.12268   0.050597
+3              0.150       0.3   0.037789  ...       0.3    0.12268   0.050447
+4              0.175       0.4   0.037790  ...       0.4    0.12269   0.050579
+..               ...       ...        ...  ...       ...        ...        ...
+166              NaN      16.6   0.037948  ...      16.6    0.12285   0.050200
+167              NaN      16.7   0.037950  ...      16.7    0.12286   0.050242
+168              NaN      16.8   0.037952  ...      16.8    0.12286   0.050255
+169              NaN      16.9   0.037954  ...      16.9    0.12287   0.050296
+170              NaN      17.0   0.037957  ...      17.0    0.12287   0.050288
+
+[171 rows x 25 columns]
+⚠️ All columns of your data:
+['Power_values(W)', 'Z_0.075W', 'OA_0.075W', 'CA_0.075W', 'Z_0.100W', 'OA_0.100W', 'CA_0.100W', 'Z_0.125W', 'OA_0.125W', 'CA_0.125W', 'Z_0.150W', 'OA_0.150W', 'CA_0.150W', 'Z_0.175W', 'OA_0.175W', 'CA_0.175W', 'Z_0.200W', 'OA_0.200W', 'CA_0.200W', 'Z_0.225W', 'OA_0.225W', 'CA_0.225W', 'Z_0.250W', 'OA_0.250W', 'CA_0.250W']
+Traceback (most recent call last):
+
+  File "C:\Users\xxx\.conda\envs\spyder\lib\site-packages\spyder_kernels\py3compat.py", line 356, in compat_exec
+    exec(code, globals, locals)
+
+  File "c:\users\xxx\z_scan_data_processing.py", line 345, in <module>
+    raise TypeError("Inadequate data format")
+
+TypeError: Inadequate data format
+```
+
+If the file structure check is successful, the program keeps its execution. The program will show the input data as *bokeh* plots (in browser or in notebook).
+
+ <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data.png" width="500" height="250"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data.png" width="500" height="250">
+ 
+
+![alt text](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20CA%20raw%20data.png | width=100px)
+
+![alt text](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/bokeh_plot%20OA%20raw%20data.png){ width=50% }
+
+User must review measurement data, and determine which are the z-coordinates ranges for which the sample behavior may be considered linear; i.e., intervals of z-coordinates for which the output transmission level did not experience notorious alterations. User would typically identify two ranges, one at the beginning and other at the end of the Z-scans, as the beam focus is expected to be located near to the center of the z-coordinates selection. The program requires that the user enter the amount of identified linear ranges. If the transmission did not return to the linear regime for one of the Z-scan extreme regions, enter 1. Next, the program ask the user to enter the upper and lower limits of each range (in mm). Users can use *bokeh* plots to zoom in, to better determine the limits.
+
+```
 Enter number of linear ranges (typically 2):
 >>: 2
 
@@ -131,7 +199,11 @@ Enter lower limit for range 2 (in mm):
 
 Enter upper limit for range 2 (in mm):
 >>: 17
+```
 
+
+
+```
 According to the plotted data and the following coordinate axis convention:
 
  ╭╮                           ▉
@@ -197,9 +269,6 @@ Enter upper limit for n_2 search interval (must be greater than previous one):
 >>: 1e-17
 ```
 
-
-## Results
-
 ```
 ╓─── ▾▾▾
 ║ Parameters extracted:
@@ -212,4 +281,4 @@ Enter upper limit for n_2 search interval (must be greater than previous one):
 ```
 
 
-## Examination and diagnostics mode: Data and results survey
+## Software execution in Examination and Diagnostics Mode: Data and results survey
