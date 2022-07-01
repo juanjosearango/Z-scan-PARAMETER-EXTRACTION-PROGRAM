@@ -192,7 +192,6 @@ Users must check the trend of the closed-aperture curves, in order to verify tha
 
 ```
 According to the plotted data and the following coordinate axis convention:
-![image](https://user-images.githubusercontent.com/97413640/176959599-abf8995b-ef42-4617-8b13-ec78db714e1e.png)
 
  ╭╮                           ▉
  ││            ║              ▉
@@ -204,33 +203,10 @@ According to the plotted data and the following coordinate axis convention:
 Lens        Sample         Aperture
 
 Select the expected sign of the nonlinear refractive index (n_2):
+```
+![image](https://user-images.githubusercontent.com/97413640/176959863-d07adf3b-2b2e-4c7e-be86-fab8378d1b95.png)
 
-(0) Positive.
-                      χ3, n2 > 0
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃                   ◉◉          ┃
-┃                 ◉    ◉        ┃
-┃               ◉        ◉      ┃
-┃◉ ◉ ◉       ◉          ◉ ◉ ◉┃
-┃       ◉    ◉                  ┃
-┃         ◉◉                    ┃
-┃                       ┉┉┉┉┉> Z ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-![image](https://user-images.githubusercontent.com/97413640/176959627-3874fdc2-3ea8-4d71-9fbb-96d2d686e325.png)
-
-(1) Negative.
-                      χ3, n2 < 0
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃                       ┉┉┉┉┉> Z ┃
-┃           ◉◉                  ┃  
-┃         ◉   ◉                 ┃
-┃       ◉       ◉               ┃
-┃◉ ◉ ◉          ◉       ◉ ◉ ◉┃
-┃                   ◉    ◉      ┃
-┃                     ◉◉        ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-![image](https://user-images.githubusercontent.com/97413640/176959655-4eb56095-7372-407f-8cb8-482c94ad1a73.png)
-
+```
 >>: 0
 ```
 
