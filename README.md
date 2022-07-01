@@ -363,10 +363,39 @@ In this mode, the software shows the following additional *bokeh* plots and grap
 
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/CAn%20data%20processing.png" width="500" height="313">
 
-- After a value for n_2 estimation has been found, the beam irradiance profile is shown, evaluated at -1.7 z_0, 0, and 1.7 z_0. Where z_0 is the beam Rayleigh length.
+- After a value for n_2 estimation has been found, the beam irradiance profile evaluated at aperture plane is shown, for sample placed at -1.7 z_0, 0, and 1.7 z_0. Where z_0 is the beam Rayleigh length.
 
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample1.png" width="250" height="225"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample2.png" width="250" height="225"><img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/beam%20after%20NL%20sample3.png" width="250" height="225">
 
 - After a value for n_2 estimation has been found, an illustrative figure is prepared, showing the simulated closed-aperture normalized transmission, for different input power values. It is possible to observe asymmetries in this plot if there is a mismatch between the value of beta_TPA and the one found for n_2.
 
 <img src="https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Reference%20figures/n_2%20power%20sweep%20CA%20z-scan%20simulation.png" width="700" height="400">
+
+## Potential errors
+
+The following are common errors that may arise from the execution of the software. The way of solving these issues is described below. For any physical inconsistency or software error, either derived from the code performance or the quality of the experimental data, make use of the [Examination and Diagnostics Mode](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/edit/main/README.md#software-execution-in-examination-and-diagnostics-mode-data-and-results-survey) to troubleshoot the problem.
+
+> **Just after running the code, the program raised the error "*Inadequate data format*".**
+> 
+> It occurs because the input data file provided does not meet the [file structure guidelines](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/edit/main/README.md#requirements-for-measurements-and-input-data-preparation). Check that the file has the CSV format, the first column of the file includes the poweer sweep values only, the following columns are organized in sets of three (one set per incident power level), and there are 1+3N columns in the file (being N the number of power values reported in the first column). Check the [template file](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Z_Scan_Data.csv) for more information about the proper file structure.
+
+> **The program found some estimations for the nonlinear parameters, but they have unreasonable orders of magnitude.**
+> 
+> Please make sure that the data provided in the input file has units of milimeters (mm) and watts (W) for all length and power measurements. Make sure that the values provided in the [initial settings section](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/edit/main/README.md#software-initial-settings) are in SI units, without prefixes (i.e., m, s, Hz, etc).
+
+> **The program execution does not converge (approx. more than an hour of execution) or the sign of the estimated parameter is not correct.**
+> 
+> Please make sure that you are following the instructions presented by the console, regarding the sign of the entered values, their arithmetic relations (>,<,=), and their units. Please also use the [Examination and Diagnostics Mode](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/edit/main/README.md#software-execution-in-examination-and-diagnostics-mode-data-and-results-survey) to verify that experimental data have the expected functional form and dependence with input power.
+
+> **The simulated power detection curves provided by the software execution in 'Examination and Diagnostics Mode' exhibit a very strange functional form, not related at all with expected Z-scan typical curves.**
+> 
+> This may be a numerical error, related with the sampling used for the beam's field profile square cross-sections, used for the propagation calculations. It may be necessary to increase the resolution of this sampling. Try increasing the value of `N_obj` in the [initial settings section](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/edit/main/README.md#software-initial-settings). This will increase the execution time and the computational resources required for the execution.
+
+> **The beam irradiance profiles shown by the program in 'Examination and Diagnostics Mode' illustrating the simulated aperture and the simulated final detection at the aperture plane for different sample locations, appear to be extremely small within the used cross-sections, or overflow the cross-sections borders and strange interference-like patterns appear within the irradiance profile.**
+> 
+> This may be a numerical error, related with the size of the beam's field profile square cross-sections, used for the propagation calculations. It may occur when the experimental optical setup have atypical metric parameters (e.g., very short lens focal length and very large setup length, or viceversa). In this rare case, it may be necessary to adjust the source code to solve the problem. Look for the following lines in the code:
+> ```
+> # 🔎🕳KERR EFFECT PARAMETER EXTRACTION🔎🕳
+> L_obj = 30*(2*10*w_0)
+> ```
+> `L_obj` determines the size of the square
