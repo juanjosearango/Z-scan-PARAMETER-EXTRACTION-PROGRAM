@@ -120,7 +120,24 @@ The name of the variables within user settings sections must not be modified, on
 
 After completing the manual adjustment of the initial settings, run the program. If `install_libs` was set as `True`, the library installation/check will be performed first; this may take several seconds.
 
-If the library import is successful, the software will show the start message:
+If the library import is successful, the software will show the start message: 
+
+```
+═══════════════════════════════════════╯ |╱
+                                         ⚪⚟
+═══════════════════════════════════════╮ |╲
+
+  ▗▗▗        ▞▚   ▞▚  ▞▚▞  ▚▞▚
+     ▞  ▗▗   ▚    ▗   ▗  ▗   ▗  ▗
+   ▞            ▚   ▘   ▘  ▘  ▗  ▗
+  ▝▝▝       ▚▞    ▚▞  ▚▞▚  ▘  ▘
+
+       PARAMETER EXTRACTION PROGRAM
+
+                    Juan José Arango. 2022 ┃
+          Universidad Nacional de Colombia ┃
+              Bridgewater State University ┃
+```
 
 ```
 ═══════════════════════════════════════╯ |╱
