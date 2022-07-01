@@ -1,0 +1,5 @@
+NOTICE
+
+Z_Scan_Data_Processing.py and Z_Scan_Data.csv are part of the software "Z-scan: PARAMETER EXTRACTION SOFTWARE", licensed under the Apache License, Version 2.0. © 2021 Juan José Arango.
+
+The function propaFT, included in the source code of Z_Scan_Data_Processing.py is taken from the open access published work of E. Rueda (2020), available at https://colab.research.google.com/drive/1Olu6MgqgiSVBMciiSNuzy5818bw4xyme?usp=sharing#scrollTo=OnuOVji9Zg-x and https://colab.research.google.com/drive/1mqFC_UN7097zv3RrGgDctaTbepDWLDI0.
