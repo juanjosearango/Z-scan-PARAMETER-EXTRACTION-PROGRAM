@@ -398,4 +398,4 @@ The following are common errors that may arise from the execution of the softwar
 > # 🔎🕳KERR EFFECT PARAMETER EXTRACTION🔎🕳
 > L_obj = 30*(2*10*w_0)
 > ```
-> `L_obj` determines the size of the square
+> `L_obj` determines the physical (not computational) size of the square cross-sections, used for the propagation calculations. This value takes as reference the radius of the beam at focues, w_0. If necessary, reduce or increase the scale factor (30, by default) until the visualization of the irradiance profiles shown by the software in 'Examination and Diagnostics Mode' becomes reasonable.
