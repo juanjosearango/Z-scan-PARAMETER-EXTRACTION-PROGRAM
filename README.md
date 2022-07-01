@@ -123,22 +123,21 @@ After completing the manual adjustment of the initial settings, run the program.
 If the library import is successful, the software will show the start message: 
 
 ```
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-═══════════════════════════════════════╯ |╱
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░⚪⚟
-═══════════════════════════════════════╮ |╲
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░▗▗▗░░░░░░░░▞▚░░░▞▚░░▞▚▞░░▚▞▚░░
-░░░░░▞░░▗▗░░░▚░░░▗░░░░▗░░▗░░░▗░░▗░░
-░░░▞░░░░░░░░░░░░▚░░▗░░░░▗░▗░░░▗░░▗░░
-░░▝▝▝░░░░░░░▚▞░░░░▚▞░░▚▞▚░░▘░░▘░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░PARAMETER EXTRACTION PROGRAM░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 
+════════════════════════════════════════════════╯ |╱
+                                                 ⚪⚟
+════════════════════════════════════════════════╮ |╲
 
-                    Juan José Arango. 2022 ┃
-          Universidad Nacional de Colombia ┃
-              Bridgewater State University ┃
+▗▗▗▗◽◽◽◽▞▚◽◽▞▚◽◽▞▚▞◽◽▚▞▚
+◽◽▞◽▗▗▗◽▚◽◽▗◽◽◽▗◽▗◽◽▘◽▘
+◽▞◽◽◽◽◽◽▚◽▗◽◽◽▗◽▗◽◽▘◽▘
+▝▝▝▝◽◽◽◽▚▞◽◽▚▞◽◽▚▞▚◽◽▘◽▘
+
+          PARAMETER EXTRACTION PROGRAM
+
+
+                           Juan José Arango. 2022 ┃
+                 Universidad Nacional de Colombia ┃
+                     Bridgewater State University ┃
 ```
 
 ```
