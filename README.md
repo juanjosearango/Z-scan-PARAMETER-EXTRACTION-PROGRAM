@@ -127,10 +127,10 @@ If the library import is successful, the software will show the start message:
                                          ⚪⚟
 ═══════════════════════════════════════╮ |╲
 
-  ▗▗▗        ▞▚   ▞▚  ▞▚▞  ▚▞▚
-     ▞  ▗▗   ▚    ▗   ▗  ▗   ▗  ▗
-   ▞            ▚   ▘   ▘  ▘  ▗  ▗
-  ▝▝▝       ▚▞    ▚▞  ▚▞▚  ▘  ▘
+  ▗▗▗        ▞▚   ▞▚  ▞▚▞  ▚▞▚
+     ▞  ▗▗   ▚   ▗    ▗  ▗   ▗  ▗
+   ▞            ▚  ▗    ▗  ▗   ▗  ▗
+  ▝▝▝        ▚▞    ▚▞  ▚▞▚   ▘  ▘
 
        PARAMETER EXTRACTION PROGRAM
 
