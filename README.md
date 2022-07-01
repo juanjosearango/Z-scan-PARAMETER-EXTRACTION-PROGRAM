@@ -156,6 +156,8 @@ If the library import is successful, the software will show the start message:
           Universidad Nacional de Colombia ┃
               Bridgewater State University ┃
 ```
+![image](https://user-images.githubusercontent.com/97413640/176959348-a338dc3b-a374-4f89-a76a-1e79dde6ee74.png)
+
 
 Next, before starting with the calculations, the software will perform the input daya file check. If the file structure does not follow the [aforementioned guidelines](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/edit/main/README.md#requirements-for-measurements-and-input-data-preparation), program execution will stop and an error message is printed, along with information of the read data. If this occurs please check input data file format and structure; check the [example input data file](https://github.com/juanjosearango/Z-scan-PARAMETER-EXTRACTION-PROGRAM/blob/main/Z_Scan_Data.csv) included in this repository.
 
