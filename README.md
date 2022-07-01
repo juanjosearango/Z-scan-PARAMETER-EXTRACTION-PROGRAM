@@ -134,7 +134,7 @@ If the library import is successful, the software will show the start message:
 ░░▝▝▝░░░░░░░▚▞░░░░▚▞░░▚▞▚░░▘░░▘░
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░░░░░░PARAMETER EXTRACTION PROGRAM░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 
 
                     Juan José Arango. 2022 ┃
           Universidad Nacional de Colombia ┃
