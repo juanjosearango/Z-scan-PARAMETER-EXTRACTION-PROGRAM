@@ -205,6 +205,7 @@ Lens        Sample         Aperture
 Select the expected sign of the nonlinear refractive index (n_2):
 ```
 ![image](https://user-images.githubusercontent.com/97413640/176959863-d07adf3b-2b2e-4c7e-be86-fab8378d1b95.png)
+![image](https://user-images.githubusercontent.com/97413640/176960031-6ec87071-3361-406f-bf89-7e007ab8795a.png)
 
 ```
 >>: 0
