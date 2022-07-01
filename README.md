@@ -122,40 +122,6 @@ After completing the manual adjustment of the initial settings, run the program.
 
 If the library import is successful, the software will show the start message: 
 
-```
-════════════════════════════════════════════════╯ |╱
-                                                 ⚪⚟
-════════════════════════════════════════════════╮ |╲
-
-▗▗▗▗◽◽◽◽▞▚◽◽▞▚◽◽▞▚▞◽◽▚▞▚
-◽◽▞◽▗▗▗◽▚◽◽▗◽◽◽▗◽▗◽◽▘◽▘
-◽▞◽◽◽◽◽◽▚◽▗◽◽◽▗◽▗◽◽▘◽▘
-▝▝▝▝◽◽◽◽▚▞◽◽▚▞◽◽▚▞▚◽◽▘◽▘
-
-          PARAMETER EXTRACTION PROGRAM
-
-
-                           Juan José Arango. 2022 ┃
-                 Universidad Nacional de Colombia ┃
-                     Bridgewater State University ┃
-```
-
-```
-═══════════════════════════════════════╯ |╱
-                                         ⚪⚟
-═══════════════════════════════════════╮ |╲
-
-  ▗▗▗        ▞▚   ▞▚  ▞▚▞  ▚▞▚
-     ▞  ▗▗   ▚    ▗   ▗  ▗   ▗  ▗
-   ▞            ▚   ▘   ▘  ▘  ▗  ▗
-  ▝▝▝       ▚▞    ▚▞  ▚▞▚  ▘  ▘
-
-       PARAMETER EXTRACTION PROGRAM
-
-                    Juan José Arango. 2022 ┃
-          Universidad Nacional de Colombia ┃
-              Bridgewater State University ┃
-```
 ![image](https://user-images.githubusercontent.com/97413640/176959348-a338dc3b-a374-4f89-a76a-1e79dde6ee74.png)
 
 
@@ -226,6 +192,7 @@ Users must check the trend of the closed-aperture curves, in order to verify tha
 
 ```
 According to the plotted data and the following coordinate axis convention:
+![image](https://user-images.githubusercontent.com/97413640/176959599-abf8995b-ef42-4617-8b13-ec78db714e1e.png)
 
  ╭╮                           ▉
  ││            ║              ▉
@@ -249,6 +216,7 @@ Select the expected sign of the nonlinear refractive index (n_2):
 ┃         ◉◉                    ┃
 ┃                       ┉┉┉┉┉> Z ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+![image](https://user-images.githubusercontent.com/97413640/176959627-3874fdc2-3ea8-4d71-9fbb-96d2d686e325.png)
 
 (1) Negative.
                       χ3, n2 < 0
@@ -261,6 +229,7 @@ Select the expected sign of the nonlinear refractive index (n_2):
 ┃                   ◉    ◉      ┃
 ┃                     ◉◉        ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+![image](https://user-images.githubusercontent.com/97413640/176959655-4eb56095-7372-407f-8cb8-482c94ad1a73.png)
 
 >>: 0
 ```
